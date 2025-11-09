@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bclb2pno2mthn"]
+
+[ext_resource type="Script" uid="uid://d31ir4rx77mb2" path="res://entities/sun/sun.gd" id="1_ecaif"]
+[ext_resource type="Texture2D" uid="uid://cjtui10b6jjhv" path="res://entities/sun/sun.svg" id="2_stape"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stape"]
+albedo_color = Color(1, 0.8, 0.2, 1)
+
+[node name="Sun" type="DirectionalLight3D"]
+script = ExtResource("1_ecaif")
+
+[node name="SunRenderer" type="Node3D" parent="."]
+
+[node name="SunSphere" type="CSGSphere3D" parent="SunRenderer"]
+material = SubResource("StandardMaterial3D_stape")
+
+[node name="SunSprite" type="Sprite3D" parent="SunRenderer"]
+billboard = 2
+texture = ExtResource("2_stape")
